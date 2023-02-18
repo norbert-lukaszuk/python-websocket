@@ -2,6 +2,22 @@
 html {
   font-family: "Montserrat", sans-serif;
 }
-.clock {
+#clock {
   text-align: center;
+}
+.digit {
+  display: inline-block;
+  min-width: 2.5rem;
+  font-size: 3rem;
+  background-color: gray;
+  padding: 0 0.25rem;
+  margin-right: 5px;
+}
+.dgit .dots {
+  font-size: 2.5rem;
+  margin-right: 5px;
+}
+
+#messages:nth-child(2n - 1) {
+  background-color: blueviolet;
 }

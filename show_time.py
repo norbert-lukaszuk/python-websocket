@@ -7,9 +7,10 @@ import websockets
 
 async def show_time(websocket):
     while True:
-        message = datetime.datetime.utcnow().isoformat() + "Z"
+        message = datetime.datetime.utcnow().isoformat()
+        
         await websocket.send(message)
-        await asyncio.sleep(random.random() * 2 + 1)
+        await asyncio.sleep(1)
 
 async def main():
     async with websockets.serve(show_time, "localhost", 5678):
