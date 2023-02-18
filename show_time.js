@@ -2,9 +2,10 @@ window.addEventListener("DOMContentLoaded", () => {
   const clockDiv = document.getElementById("clock");
   const dateDiv = document.getElementById("date");
 
-  const websocket = new WebSocket("ws://localhost:5678/");
+  const websocket = new WebSocket("ws://192.168.0.123:5678/");
 
   websocket.onmessage = ({ data }) => {
+    console.log(data);
     const formated = dayjs(data).add(1, "h").format("HHmmss");
     clockDiv.innerHTML = `<div class="digit">${formated[0]}</div>
     <div class="digit">${formated[1]}</div>
