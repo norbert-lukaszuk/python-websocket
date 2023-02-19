@@ -13,7 +13,7 @@ async def show_time(websocket):
     while True:
         message = datetime.datetime.utcnow().isoformat()
         humidity, temperature = Adafruit_DHT.read(DHT_SENSOR, DHT_PIN)
-        msg = "Temp:{0:0.1f} humid:{0:0.1f}".format(temperature,humidity)
+        msg = "Temp:{0:0.1f} humid:{1:0.1f}".format(temperature,humidity)
         print(msg)
         await websocket.send(msg)
         await asyncio.sleep(1)
