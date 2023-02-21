@@ -2,20 +2,20 @@
 
 import asyncio
 import datetime
-import random
+import json
 import websockets
 import Adafruit_DHT
 
-DHT_SENSOR = Adafruit_DHT.DHT11
+DHT_SENSOR = Adafruit_DHT.DHT22
 DHT_PIN = 4
 
 async def show_time(websocket):
     while True:
-        message = datetime.datetime.utcnow().isoformat()
+        time = datetime.datetime.utcnow().isoformat()
         humidity, temperature = Adafruit_DHT.read(DHT_SENSOR, DHT_PIN)
-        msg = "Temp:{0:0.1f} humid:{1:0.1f}".format(temperature,humidity)
-        print(msg)
-        await websocket.send(msg)
+        temp = "{:.1f}".format(temperature)
+        humid = "{:.1f}".format(humidity)
+        await websocket.send(json.dumps({"time":time,"temp":temp,"humid":humid}))
         await asyncio.sleep(1)
 
 async def main():

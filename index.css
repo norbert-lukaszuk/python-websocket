@@ -21,6 +21,13 @@ html {
   gap: 1rem;
   margin-top: 2rem;
 }
+#humidity {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 3rem;
+  color: #fff;
+}
 .digit {
   display: inline-block;
   min-width: 2.5rem;
@@ -47,7 +54,22 @@ html {
   background-color: rgba(128, 128, 128, 0.445);
   color: #fff;
 }
+
 .inline {
   display: inline-block;
   margin-right: 2rem;
+}
+.ti {
+  font-size: 4rem;
+  color: #fff;
+}
+.ti-home {
+  content: "eac1";
+}
+.ti-temperature {
+  font-size: 2rem;
+  content: "eb38";
+}
+.ti-temperature-celsius {
+  content: "eb36";
 }

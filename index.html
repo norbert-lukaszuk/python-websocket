@@ -3,9 +3,19 @@
   <head>
     <title>WebSocket demo</title>
     <link rel="stylesheet" href="index.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css"
+    />
   </head>
   <body>
     <div class="wraper">
+      <div id="humidity">
+        <i class="ti ti-home"></i>
+        <i class="ti ti-temperature"></i>
+        <span id="tempValue"></span>
+        <i class="ti ti-temperature-celsius"></i>
+      </div>
       <div id="clock"></div>
       <div id="date"></div>
       <script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
