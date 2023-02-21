@@ -1,7 +1,7 @@
 window.addEventListener("DOMContentLoaded", () => {
   const clockDiv = document.getElementById("clock");
   const dateDiv = document.getElementById("date");
-  const humidityDiv = document.getElementById("humidity");
+  const tempDiv = document.getElementById("temperature");
   const tempValue = document.getElementById("tempValue");
   const websocket = new WebSocket("ws://192.168.0.123:5678/");
 

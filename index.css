@@ -21,7 +21,7 @@ html {
   gap: 1rem;
   margin-top: 2rem;
 }
-#humidity {
+#temperature {
   display: flex;
   justify-content: center;
   align-items: center;
