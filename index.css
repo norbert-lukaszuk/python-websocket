@@ -28,6 +28,13 @@ html {
   font-size: 3rem;
   color: #fff;
 }
+#humidity {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 3rem;
+  color: #fff;
+}
 .digit {
   display: inline-block;
   min-width: 2.5rem;
@@ -69,6 +76,10 @@ html {
 .ti-temperature {
   font-size: 2rem;
   content: "eb38";
+}
+.ti-droplet-half-filled {
+  font-size: 2rem;
+  content: "f6c5";
 }
 .ti-temperature-celsius {
   content: "eb36";

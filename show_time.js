@@ -3,12 +3,14 @@ window.addEventListener("DOMContentLoaded", () => {
   const dateDiv = document.getElementById("date");
   const tempDiv = document.getElementById("temperature");
   const tempValue = document.getElementById("tempValue");
-  const websocket = new WebSocket("ws://192.168.0.123:5678/");
+  const humidValue = document.getElementById("humidValue");
+  const websocket = new WebSocket("ws://192.168.0.125:5678/");
 
   websocket.onmessage = ({ data }) => {
     const resp = JSON.parse(data);
     console.log(resp);
     tempValue.innerText = resp.temp;
+    humidValue.innerText = resp.humid + "%";
     // humidityDiv.innerHTML = ` <i class="ti ti-home"></i><i class="ti ti-temperature"></i> <p>${resp.temp}</p><i class="ti ti-temperature-celsius"></i>`;
     const formated = dayjs(resp.time).add(1, "h").format("HHmmss");
     clockDiv.innerHTML = `<div class="digit">${formated[0]}</div>
