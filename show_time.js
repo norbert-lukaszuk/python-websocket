@@ -4,7 +4,8 @@ window.addEventListener("DOMContentLoaded", () => {
   const tempDiv = document.getElementById("temperature");
   const tempValue = document.getElementById("tempValue");
   const humidValue = document.getElementById("humidValue");
-  const websocket = new WebSocket("ws://192.168.0.125:5678/");
+  // const websocket = new WebSocket("ws://45.155.150.176:5678/");
+  const websocket = new WebSocket(`ws://${window.location.hostname}:5678/`);
 
   websocket.onmessage = ({ data }) => {
     const resp = JSON.parse(data);
