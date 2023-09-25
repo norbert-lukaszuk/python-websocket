@@ -9,6 +9,13 @@ import requests
 DHT_SENSOR = Adafruit_DHT.DHT22
 DHT_PIN = 4
 
+# requests.post("https://ntfy.sh/my_posts", 
+#         data="Websocket server is running!", 
+#         headers={
+#         "Title":"Raspberry pi logs",
+#         "Priority":"default",
+#         "Tags":"computer, wrench, +1"
+#         })
 async def show_time(websocket):
     while True:
         time = datetime.datetime.utcnow().isoformat()
@@ -19,15 +26,8 @@ async def show_time(websocket):
             await websocket.send(json.dumps({"time":time,"temp":temp,"humid":humid}))
         await asyncio.sleep(1)
 
+
 async def main():
-    requests.post("https://ntfy.sh/my_posts", 
-        data="Websocket server is running!", 
-        headers={
-        "Title":"Raspberry pi logs",
-        "Priority":"default",
-        "Tags":"computer, wrench, +1"
-        })
-    
     async with websockets.serve(show_time, "", 5678):
         await asyncio.Future()  # run forever
 
